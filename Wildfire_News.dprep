@@ -1,0 +1,71 @@
+{
+  "schemaVersion": 40,
+  "id": "027d0148-dd8b-44cf-ae25-6cb234146603",
+  "activities": [
+    {
+      "id": "f504da65-6d8b-40cd-b83b-605d5d7df53d",
+      "name": "ca_wildfire3",
+      "blocks": [
+        {
+          "id": "20232d2b-50ea-4b6e-a5c6-02e04a5c711e",
+          "type": "Microsoft.DPrep.ReferenceActivityBlock",
+          "arguments": {
+            "reference": {
+              "referenceType": 1,
+              "referenceContainerPath": "./ca_wildfire3.dsource",
+              "referencedActivityId": "db35d0d4-cbbe-4ff1-8b88-59b11a9f7ed6",
+              "referencedBranchId": null,
+              "referencedStep": null,
+              "anonymousSteps": null
+            }
+          }
+        },
+        {
+          "id": "21302064-03ef-484f-964c-b9a75dad302f",
+          "type": "Microsoft.DPrep.ColumnRenameBlock",
+          "arguments": {
+            "newColumnId": "ID",
+            "columnId": "Column1"
+          }
+        },
+        {
+          "id": "038b0b0e-0705-4666-ad0e-b36e44391114",
+          "type": "Microsoft.DPrep.ColumnRenameBlock",
+          "arguments": {
+            "newColumnId": "Text",
+            "columnId": "Column2"
+          }
+        },
+        {
+          "id": "d91bd492-701f-4fce-b95f-cec45fb02971",
+          "type": "Microsoft.DPrep.ColumnRenameBlock",
+          "arguments": {
+            "newColumnId": "Date",
+            "columnId": "Column3"
+          }
+        }
+      ],
+      "inspectors": [
+        {
+          "id": "734c8c96-e103-4767-8321-b32d4310cc6b",
+          "type": "Microsoft.DPrep.DataQualityInspector",
+          "arguments": {},
+          "reference": {
+            "referenceType": 0,
+            "referenceContainerPath": null,
+            "referencedActivityId": "f504da65-6d8b-40cd-b83b-605d5d7df53d",
+            "referencedBranchId": null,
+            "referencedStep": {
+              "stepReferenceType": 1,
+              "referencedStepId": null,
+              "fallback": 1
+            },
+            "anonymousSteps": null
+          },
+          "isBackground": false
+        }
+      ]
+    }
+  ],
+  "runConfigurations": []
+}

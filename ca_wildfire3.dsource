@@ -1,0 +1,132 @@
+{
+  "schemaVersion": 40,
+  "id": "c2ad2f95-7343-486e-8f9a-60bc3c9e6a8b",
+  "activities": [
+    {
+      "id": "db35d0d4-cbbe-4ff1-8b88-59b11a9f7ed6",
+      "name": "ca_wildfire3",
+      "blocks": [
+        {
+          "id": "a1eee684-fc28-4276-9d32-3b5be0ab3620",
+          "type": "Microsoft.DPrep.DataSourceBlock",
+          "arguments": {
+            "path": {
+              "target": 0,
+              "resourceDetails": [
+                {
+                  "path": "/Users/webbg/Documents/ca_wildfire3.txt"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "id": "8bae9cc0-7e06-4fc3-a250-1ef3ea8c7fa8",
+          "type": "Microsoft.DPrep.ParseDelimitedBlock",
+          "arguments": {
+            "preview": false,
+            "columnHeadersMode": 0,
+            "separator": "\t",
+            "fileEncoding": 1,
+            "skipRowsMode": 0,
+            "handleQuotedLineBreaks": false
+          }
+        },
+        {
+          "id": "dd1524c8-907b-4578-8294-8605bcbd5b1e",
+          "type": "Microsoft.DPrep.SetColumnTypesBlock",
+          "arguments": {
+            "columnConversion": [
+              {
+                "columnId": "Column3",
+                "typeProperty": 4,
+                "typeArguments": {
+                  "dateTimeFormats": [
+                    "%Y-%m-%d"
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "id": "1a3f72b1-07aa-495a-a22a-b4fbeacfc3b4",
+          "type": "Microsoft.DPrep.SampleBlock",
+          "arguments": {
+            "samples": [
+              {
+                "sampleId": "c3e211df-b575-4a86-8b08-39b8c409d9d0",
+                "sampleRevision": "7ee00569-95ee-45c0-988f-4825d942a2f3",
+                "sampleName": "Top 10000",
+                "sampleRunner": {
+                  "id": null,
+                  "type": 0
+                },
+                "remoteGeneratorProperties": {},
+                "sampleStrategy": 0,
+                "topArguments": {
+                  "sampleCount": 10000
+                },
+                "randomNArguments": {
+                  "sampleCount": 10000
+                },
+                "randomPercentArguments": {
+                  "probability": 0.1
+                },
+                "allowAutoGen": true,
+                "isDisabled": false
+              }
+            ],
+            "activeSample": "c3e211df-b575-4a86-8b08-39b8c409d9d0"
+          }
+        },
+        {
+          "id": "48fa3088-1f8b-4108-a2e5-7002821a70af",
+          "type": "Microsoft.DPrep.HandlePathColumnBlock",
+          "arguments": {
+            "pathColumnOperation": 0
+          }
+        }
+      ],
+      "inspectors": [
+        {
+          "id": "c66830d8-3650-4a11-83d5-3aca04e1c0a5",
+          "type": "Microsoft.DPrep.DataQualityInspector",
+          "arguments": {},
+          "reference": {
+            "referenceType": 0,
+            "referenceContainerPath": null,
+            "referencedActivityId": "db35d0d4-cbbe-4ff1-8b88-59b11a9f7ed6",
+            "referencedBranchId": null,
+            "referencedStep": {
+              "stepReferenceType": 1,
+              "referencedStepId": null,
+              "fallback": 1
+            },
+            "anonymousSteps": null
+          },
+          "isBackground": false
+        },
+        {
+          "id": "22152929-fe6e-4dac-ada0-d260a1822691",
+          "type": "Microsoft.DPrep.DataProfileInspector",
+          "arguments": {},
+          "reference": {
+            "referenceType": 0,
+            "referenceContainerPath": null,
+            "referencedActivityId": "db35d0d4-cbbe-4ff1-8b88-59b11a9f7ed6",
+            "referencedBranchId": null,
+            "referencedStep": {
+              "stepReferenceType": 0,
+              "referencedStepId": "48fa3088-1f8b-4108-a2e5-7002821a70af",
+              "fallback": 1
+            },
+            "anonymousSteps": null
+          },
+          "isBackground": true
+        }
+      ]
+    }
+  ],
+  "runConfigurations": []
+}

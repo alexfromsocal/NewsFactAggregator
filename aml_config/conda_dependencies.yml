@@ -1,0 +1,37 @@
+# Conda environment specification. The dependencies defined in this file will be
+# automatically provisioned for runs against docker, VM, and HDI cluster targets.
+
+# Details about the Conda environment file format:
+# https://conda.io/docs/using/envs.html#create-environment-file-by-hand
+
+# For Spark packages and configuration, see spark_dependencies.yml.
+
+name: project_environment
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.5.2
+  - numpy>=1.13
+  - scikit-learn
+  - nltk
+  - pandas
+  - azure
+  - gensim
+  - scipy
+  - wordcloud
+  - bokeh
+  - pip:
+    - notebook
+    - gensim
+    - matplotlib
+    - azure-storage
+    - azure-storage-blob
+    - azure-storage-file
+    - azure-storage-queue
+    # The API for Azure Machine Learning Model Management Service.
+    # Details: https://github.com/Azure/Machine-Learning-Operationalization
+    - azure-ml-api-sdk==0.1.0a11
+
+    # Library for collecting data from operationalized models
+    - azureml.datacollector==0.1.0a13

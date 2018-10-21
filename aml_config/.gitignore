@@ -1,0 +1,11 @@
+# Ignore everything in this directory
+*
+# Except this file
+!.gitignore
+!conda_dependencies.yml
+!docker.compute
+!docker.runconfig
+!local.compute
+!local.runconfig
+!spark_dependencies.yml
+!jupyter_notebook_config.py
