@@ -1,3 +1,5 @@
+# This project uses code, data, and resources that were not made by my self or any collaborators. All non-roginal works (including code, works of art, writings, data, and resources) are copyright of their original owners and used here for non-commercial, open-source purposes.
+
 # Document Collection Analysis
 
 ## Link to the Microsoft DOCS site
